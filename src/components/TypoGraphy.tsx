@@ -12,6 +12,7 @@ function TypoGraphy() {
       <Typography variant="h2">Hello</Typography>
       <Typography variant="h3">Hello</Typography>
       <Typography variant="subtitle2">Hello</Typography>
+      <Typography variant="subtitle2">Hello</Typography>
     </div>
   );
 }

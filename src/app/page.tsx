@@ -1,7 +1,5 @@
-import { Inter } from "next/font/google";
 import styles from "./page.module.css";
-import {Button , TypoGraphy} from "@/components"
-const inter = Inter({ subsets: ["latin"] });
+import { Button, TypoGraphy } from "@/components";
 
 export default function Home() {
   return (
