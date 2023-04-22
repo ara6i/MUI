@@ -1,9 +1,26 @@
 "use client";
 
-import { Button, ButtonGroup, IconButton, Stack } from "@mui/material";
+import {
+  Button,
+  ButtonGroup,
+  IconButton,
+  Stack,
+  ToggleButton,
+  ToggleButtonGroup,
+} from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
-import React from "react";
+import FormatBoldIcon from "@mui/icons-material/FormatBold";
+import React, { useState } from "react";
 function ButtonMui() {
+  const [formats, setFormats] = useState<string | null>(null);
+  const handleChange = (
+    _event: React.MouseEvent<HTMLElement>,
+    updatedFormat: string | null
+  ) => {
+    setFormats(updatedFormat);
+    console.log(_event);
+  };
+  console.log(formats);
   return (
     <Stack spacing={4}>
       <Stack spacing={2} direction={"row"}>
@@ -47,6 +64,25 @@ function ButtonMui() {
           <Button>Hello</Button>
           <Button>Hello</Button>
         </ButtonGroup>
+      </Stack>
+      <Stack>
+        <ToggleButtonGroup
+          orientation="vertical"
+          value={formats}
+          onChange={handleChange}
+          color="success"
+          exclusive
+        >
+          <ToggleButton color="error" value={1}>
+            <FormatBoldIcon />
+          </ToggleButton>
+          <ToggleButton value={2}>
+            <FormatBoldIcon />
+          </ToggleButton>
+          <ToggleButton value={3}>
+            <FormatBoldIcon />
+          </ToggleButton>
+        </ToggleButtonGroup>
       </Stack>
     </Stack>
   );
